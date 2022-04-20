@@ -8,38 +8,22 @@ A beautiful GUI interface for the international sandwich chain, Subway.
 
 ## Analysis Steps
 
-This section should restate the assignment and explain how you analyzed the requirements in order 
-to develop a solution.
+We had to make a POS system to take the order from the user for a sandwich.  
+We knew that we had to create several dropdown menus with an order button and an event listener to do something when that button is clicked
 
 ### Design
 
-How did you approach your program design? Did you use multiple classes to define various objects?
-
-```
-Give examples
-```
+To create a solution to the problem, our team decided to create three classes, the main class that displayed the program as a GUI,   
+a sandmich class to hold the sandwich options,  
+and a final options class to hold an option that can be picked. 
 
 ### Testing
 
-A step by step series of examples that you developed to properly test the program. 
-
-Say what the step will be
-
-```
-Give the example
-```
-
-And repeat
-
-```
-until finished
-```
-
-End with an example of getting some data out of the system or using it for a little demo
+When a change was made, we ran the program and decided if the program was doing what we thought it would    
+If it wasn't we went back and made changes and if it was we celebrated and continued on 
 
 ## Notes
-
-Explain any issues or testing instructions.
+n/a
 
 ## Do not change content below this line
 ## Adapted from a README Built With
