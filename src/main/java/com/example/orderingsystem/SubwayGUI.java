@@ -25,7 +25,7 @@ import java.io.IOException;
 
 public class SubwayGUI extends Application {
 
-    public void start(Stage stage) throws IOException{
+    public void start(Stage stage) throws IOException {
 // create a pane to place nodes in using a grid concept
         GridPane grid = new GridPane();
 
@@ -36,14 +36,15 @@ public class SubwayGUI extends Application {
 
         //Array of each option available to the user
         Option[] options = {
-        new Option("Size", new String[]{"6\"", "12\""}),
-        new Option("Bread", new String[]{"Italian", "Wheat", "Multigrain"}),
-        new Option("Meat", new String[]{"Turkey", "Ham", "Roast Beef"}),
-        new Option("Cheese", new String[]{"Mozzarella", "American", "Swiss"}),
-        new Option("Veggies", new String[]{"Lettuce", "Tomato", "Onion"}),
-        new Option("Sauce", new String[]{"Mayo", "Oil", "Vinegar"}),
-        new Option("Toasted", new String[]{"Y", "N"}),
-        new Option("Salt & Pepper", new String[]{"Y", "N"})
+            new Option("Size", new String[]{"6\"", "12\""}),
+            new Option("Bread", new String[]{"Italian", "Wheat", "Multigrain"}),
+            new Option("Meat", new String[]{"Turkey", "Ham", "Roast Beef"}),
+            new Option("Cheese", new String[]{"Mozzarella", "American", "Swiss"}),
+            new Option("Veggies", new String[]{"Lettuce", "Tomato", "Onion"}),
+            new Option("Sauce", new String[]{"Mayo", "Oil", "Vinegar"}),
+            new Option("Toasted", new String[]{"Y", "N"}),
+            new Option("Salt & Pepper", new String[]{"Y", "N"})
+            //new Option("Nuts", new String[]{"Y", "N"})
         };
 
 
@@ -57,7 +58,7 @@ public class SubwayGUI extends Application {
         colMax *= 2;
 
         //Array to error check later in the program.
-        ComboBox[] boxes = new ComboBox[options.length];
+        Object[][] objs = new Object[options.length][2];
 
         //Loop to display all the options for the user to pick.
         for(int i = 0; i < options.length; i++) {
@@ -71,7 +72,9 @@ public class SubwayGUI extends Application {
             //Set the ComboBox width for uniformity
             cmb.setPrefWidth(150.0);
             //Add the ComboBox to the boxes array
-            boxes[i] = cmb;
+
+            objs[i][0] = options[i].name;
+            objs[i][1] = cmb;
 
             //Set the constraints for the label and ComboBox
             //based on the current column and current Row
@@ -120,15 +123,26 @@ public class SubwayGUI extends Application {
             public void handle(ActionEvent actionEvent) {
 
                 //Create an array of strings the same length as the array of ComboBoxes boxes.
-                String[] orderOptions = new String[boxes.length];
+                String[] orderOptions = new String[objs.length];
+
 
                 //Go through each of the elements of the array
                 //and check to make sure the value is not null
                 for(int i = 0; i < orderOptions.length; i++) {
 
                     //If the element isn't null add the value to the options array
-                    if(boxes[i].getValue() != null) {
-                        orderOptions[i] = boxes[i].getValue().toString();
+                    if(((ComboBox) objs[i][1]).getValue() != null) {
+                        String choice = ((ComboBox) objs[i][1]).getValue().toString();
+                        if(choice == "Y" || choice == "N") {
+                            if(choice == "N") {
+                                orderOptions[i] = "NO " + objs[i][0];
+                            } else {
+                                orderOptions[i] = (String) objs[i][0];
+                            }
+
+                        } else {
+                            orderOptions[i] = ((ComboBox) objs[i][1]).getValue().toString();
+                        }
                     } else {
                         //If the element value is null add an empty string to the array.
                         orderOptions[i] = "";
