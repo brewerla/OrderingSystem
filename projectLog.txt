@@ -1,0 +1,34 @@
+-- Design Steps
+	
+	4/12 - munications through Discord's chat function to align schedules to be able to meet
+
+	4/13 - members joined a discord call (lasted around an hour) to divy up tasks and go through 
+	UML and wireframe
+
+-- Development steps
+	
+	Friday
+	4/15 - Main class created
+	4/15 - Basic class structure submitted
+	4/15 - Sandwich class created
+	4/15 - Added order button and button handling
+	4/15 - Added text field output
+	4/15 - Got output to display
+	4/15 - Colors chosen and implimented to GUI
+
+	Saturday
+	4/16 - Added error checking and correcting
+	4/16 - Sandwich toString method created
+	4/16 - Sandmich class created
+	4/16 - Option class created
+
+	Sunday
+	4/17 - Moved away from hardcoded solution to a variable solution
+	4/17 - Added labels and Grid Pane constraints to loop for effeciency 
+	4/17 - toString method created for the sandmich class
+
+	Monday
+	4/18 - Two dimensional array added 
+	
+
+	
