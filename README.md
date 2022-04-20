@@ -1,10 +1,8 @@
-# Project Title
+# Subway Ordering System!
 
-One Paragraph of project description goes here
+A beautiful GUI interface for the international sandwich chain, Subway. 
 
 ## Example Output
-
-This image will display as your example output. Name the image README.jpg in your project folder.
 
 ![Sample Output](README.jpg)
 
